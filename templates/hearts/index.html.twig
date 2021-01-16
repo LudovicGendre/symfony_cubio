@@ -7,5 +7,10 @@
 </head>
 <body>
   <h1>Favoris</h1>
+ {% for heart in hearts %}
+  <article>
+    <h2>{{ heart.title }}</h2>
+    <p> {{ heart.description }} </p>
+  </article>
 </body>
 </html>
