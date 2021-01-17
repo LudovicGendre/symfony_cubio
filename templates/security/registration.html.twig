@@ -86,12 +86,12 @@
       <div class="flex flex-col h-screen bg-gray-100 text-black">
           {{ form_start(form) }}
          
-          {{ form_row(form.username) }}
-          {{ form_row(form.email) }}
-          {{ form_row(form.password) }}
-          {{ form_row(form.confirm_password) }}
+          {{ form_row(form.username, {'attr': {'placeholder': 'Username'}}) }}
+          {{ form_row(form.email, {'attr': {'placeholder': 'email'}})  }}
+          {{ form_row(form.password, {'attr': {'placeholder': 'password'}})  }}
+          {{ form_row(form.confirm_password, {'attr': {'placeholder': 'confirm password'}})  }}
           <!-- Auth Buttton -->
-          <button type="submit" class="w-full py-3 mt-10 bg-gray-800 rounded-sm
+          <button type="submit" class="btn btn-success w-full py-3 mt-10 bg-gray-800 rounded-sm
                           font-medium text-white uppercase
                           focus:outline-none hover:bg-gray-700 hover:shadow-none">
             Inscription
