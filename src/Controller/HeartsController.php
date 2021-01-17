@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HeartsController extends AbstractController
 {
     /**
-     * @Route("/hearts", name="hearts")
+     * @Route("/", name="hearts")
      */
 
   public function index(HeartRepository $repo): Response
@@ -36,7 +36,7 @@ class HeartsController extends AbstractController
         $em->flush();
       }
 
-      return $this->redirect('/hearts');
+      return $this->redirect('/');
     } 
 
     return $this->render('hearts/create.html.twig');
