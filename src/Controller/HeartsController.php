@@ -21,7 +21,7 @@ class HeartsController extends AbstractController
     return $this->render('hearts/index.html.twig', ['hearts'=> $repo->findAll()]);
   }
    /**
-     * @Route("/hearts/create", methods={"GET", "POST"})
+     * @Route("/create", methods={"GET", "POST"})
      */
   public function create(Request $request, EntityManagerInterface $em)
   {
@@ -40,6 +40,12 @@ class HeartsController extends AbstractController
     } 
 
     return $this->render('hearts/create.html.twig');
+  }
+   /**
+     * @Route("/connect")
+     */
+  public function connect() {
+    return $this->render('hearts/connexion.html.twig');
   }
 
 }
