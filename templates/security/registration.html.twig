@@ -78,37 +78,27 @@
     </div>
     </div>
   </section>
-  <section class="bg-white border-b py-8" >
+  <section class="bg-white border-b py-8">
     <div class="container mx-auto flex flex-wrap pt-4 pb-12">
       <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
         Connexion
       </h1>
-      <div class="flex flex-col h-screen bg-gray-100">
-        <form class="mt-10" method="POST">
-          <!-- Email Input -->
-          <label for="email" class="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
-          <input id="email" type="email" name="email" placeholder="e-mail address" autocomplete="email" class="block w-full py-3 px-1 mt-2 
-                          text-gray-800 appearance-none 
-                          border-b-2 border-gray-100
-                          focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
-
-          <!-- Password Input -->
-          <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
-          <input id="password" type="password" name="password" placeholder="password" autocomplete="current-password"
-            class="block w-full py-3 px-1 mt-2 mb-4
-                          text-gray-800 appearance-none 
-                          border-b-2 border-gray-100
-                          focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
-
+      <div class="flex flex-col h-screen bg-gray-100 text-black">
+          {{ form_start(form) }}
+         
+          {{ form_row(form.username) }}
+          {{ form_row(form.email) }}
+          {{ form_row(form.password) }}
+          {{ form_row(form.confirm_password) }}
           <!-- Auth Buttton -->
           <button type="submit" class="w-full py-3 mt-10 bg-gray-800 rounded-sm
                           font-medium text-white uppercase
                           focus:outline-none hover:bg-gray-700 hover:shadow-none">
-            Login
+            Inscription
           </button>
-
+          {{ form_end(form) }}
           <!-- Another Auth Routes -->
-          <div class="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
+          {# <div class="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
             <a href="forgot-password" class="flex-2 underline">
               Forgot password?
             </a>
@@ -120,8 +110,7 @@
             <a href="register" class="flex-2 underline">
               Create an Account
             </a>
-          </div>
-        </form>
+          </div> #}
       </div>
     </div>
 
