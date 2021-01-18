@@ -84,7 +84,7 @@
         Connexion
       </h1>
       <div class="flex flex-col h-screen bg-gray-100 text-black">
-          <form action="">
+          <form action="{{ path('security_login') }}" method="POST">
             <div class="form-group">
               <input placeholder="Adresse email" required name="_username" type="text" class="form-control">
             </div>
