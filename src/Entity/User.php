@@ -30,8 +30,12 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min=8, minMessage="Votre mdp doit faire min 8 caractère")
+     * @Assert\EqualTo(propertyPath="confirm_password", message="Le mot de passe doit être similaire")
      */
     private $password;
+    /**
+     * @Assert\EqualTo(propertyPath="confirm_password", message="Le mot de passe doit être similaire")
+     */
 
     public $confirm_password;
 
