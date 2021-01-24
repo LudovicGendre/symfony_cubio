@@ -30,7 +30,7 @@ class WineController extends AbstractController
 
       if ($this->isCsrfTokenValid('wines_create', $data['_token'])) {
         $wine = new WineBio;
-        $wine->setTitle($data['name']);
+        $wine->setName($data['name']);
         $wine->setDescription($data['description']);
         $wine->setPicture($data['picture']);
         $wine->setColor($data['color']);
