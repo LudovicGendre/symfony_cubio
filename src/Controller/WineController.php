@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Wine;
+use App\Entity\WineBio;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\WineRepository;
+use App\Repository\WineBioRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +16,7 @@ class WineController extends AbstractController
      * @Route("/", name="wines")
      */
 
-  public function index(WineRepository $repo): Response
+  public function index(WineBioRepository $repo): Response
   {
     return $this->render('wines/index.html.twig', ['wines'=> $repo->findAll()]);
   }
@@ -29,9 +29,12 @@ class WineController extends AbstractController
       $data = $request->request->all();
 
       if ($this->isCsrfTokenValid('wines_create', $data['_token'])) {
-        $wine = new Wine;
-        $wine->setTitle($data['title']);
+        $wine = new WineBio;
+        $wine->setTitle($data['name']);
         $wine->setDescription($data['description']);
+        $wine->setPicture($data['picture']);
+        $wine->setColor($data['color']);
+        $wine->setDomaine($data['domaine']);
         $em->persist($wine);
         $em->flush();
       }

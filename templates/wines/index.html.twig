@@ -131,10 +131,18 @@
                 {# xGETTING STARTED #}
               </p>
               <div class="w-full font-bold text-xl text-gray-800 px-6">
-                {{ wine.title }}
+                {{ wine.name }}
+              </div>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                {{ wine.domaine }}
               </div>
               <p class="text-gray-800 text-base px-6 mb-5">
                 {{wine.description}}
+              </p>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                <b style="text-transform: capitalize">
+                  {{wine.color}}
+                </b> 
               </p>
             </a>
           </div>
