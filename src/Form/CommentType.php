@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Heart;
+use App\Entity\Wine;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,7 +20,7 @@ class CommentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Heart::class,
+            'data_class' => Wine::class,
         ]);
     }
 }

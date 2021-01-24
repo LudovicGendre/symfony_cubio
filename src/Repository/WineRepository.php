@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Heart;
+use App\Entity\WIne;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Heart|null find($id, $lockMode = null, $lockVersion = null)
- * @method Heart|null findOneBy(array $criteria, array $orderBy = null)
- * @method Heart[]    findAll()
- * @method Heart[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Wine|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Wine|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Wine[]    findAll()
+ * @method Wine[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class HeartRepository extends ServiceEntityRepository
+class WineRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Heart::class);
+        parent::__construct($registry, Wine::class);
     }
 
     // /**
-    //  * @return Heart[] Returns an array of Heart objects
+    //  * @return Wine[] Returns an array of Wine objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class HeartRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Heart
+    public function findOneBySomeField($value): ?Wine
     {
         return $this->createQueryBuilder('h')
             ->andWhere('h.exampleField = :val')

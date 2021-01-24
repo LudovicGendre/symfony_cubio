@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\HeartRepository;
+use App\Repository\WineRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=HeartRepository::class)
+ * @ORM\Entity(repositoryClass=WineRepository::class)
  */
-class Heart
+class Wine
 {
     /**
      * @ORM\Id

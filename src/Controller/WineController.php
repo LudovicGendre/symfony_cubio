@@ -2,23 +2,23 @@
 
 namespace App\Controller;
 
-use App\Entity\Heart;
+use App\Entity\Wine;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\HeartRepository;
+use App\Repository\WineRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HeartsController extends AbstractController
+class WineController extends AbstractController
 {
     /**
-     * @Route("/", name="hearts")
+     * @Route("/", name="wines")
      */
 
-  public function index(HeartRepository $repo): Response
+  public function index(WineRepository $repo): Response
   {
-    return $this->render('hearts/index.html.twig', ['hearts'=> $repo->findAll()]);
+    return $this->render('wines/index.html.twig', ['wine'=> $repo->findAll()]);
   }
    /**
      * @Route("/create", methods={"GET", "POST"})
@@ -28,24 +28,24 @@ class HeartsController extends AbstractController
     if($request->isMethod('POST')) {
       $data = $request->request->all();
 
-      if ($this->isCsrfTokenValid('hearts_create', $data['_token'])) {
-        $heart = new Heart;
-        $heart->setTitle($data['title']);
-        $heart->setDescription($data['description']);
-        $em->persist($heart);
+      if ($this->isCsrfTokenValid('wines_create', $data['_token'])) {
+        $wine = new Wine;
+        $wine->setTitle($data['title']);
+        $wine->setDescription($data['description']);
+        $em->persist($wine);
         $em->flush();
       }
 
       return $this->redirect('/');
     } 
 
-    return $this->render('hearts/create.html.twig');
+    return $this->render('wines/create.html.twig');
   }
    /**
      * @Route("/connect")
      */
   public function connect() {
-    return $this->render('hearts/connexion.html.twig');
+    return $this->render('wines/connexion.html.twig');
   }
 
 }
