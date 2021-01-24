@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\WIne;
+use App\Entity\Wine;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

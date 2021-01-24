@@ -18,7 +18,7 @@ class WineController extends AbstractController
 
   public function index(WineRepository $repo): Response
   {
-    return $this->render('wines/index.html.twig', ['wine'=> $repo->findAll()]);
+    return $this->render('wines/index.html.twig', ['wines'=> $repo->findAll()]);
   }
    /**
      * @Route("/create", methods={"GET", "POST"})
